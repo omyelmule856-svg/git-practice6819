@@ -14,5 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print success message
-        run: echo "My first CI pipeline is working!"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required file
+        run: test -f pr-demo.txt
